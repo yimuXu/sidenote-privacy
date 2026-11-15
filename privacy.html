@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidenote Privacy Policy</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --ink: #1b2230;
+        --muted: #5d6878;
+        --line: #dce1e9;
+        --accent: #2f54d0;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14181f;
+          --ink: #e6eaf1;
+          --muted: #97a2b3;
+          --line: #2a3240;
+          --accent: #8da2ff;
+          color-scheme: dark;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.65 system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 16px 64px;
+      }
+      h1 {
+        margin: 0 0 4px;
+        font-size: 28px;
+      }
+      h2 {
+        margin: 32px 0 8px;
+        font-size: 19px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      code {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sidenote Privacy Policy</h1>
+      <p class="muted">Effective 15 November 2026</p>
+
+      <p>
+        Sidenote is a browser extension: you select a word or sentence on a web page and get a short explanation from
+        an AI model of your choice. This page explains what data that involves and where it goes.
+      </p>
+
+      <h2>In short</h2>
+      <ul>
+        <li>Sidenote has no server. The developer receives none of your data.</li>
+        <li>
+          When you ask for an explanation, the text needed for it is sent directly from your browser to the AI service
+          <em>you</em> configured, using <em>your</em> API key.
+        </li>
+        <li>Your notes, settings and API keys are stored only in your browser.</li>
+        <li>No analytics, no tracking, no advertising, no sale of data.</li>
+      </ul>
+
+      <h2>What is sent, and when</h2>
+      <p>
+        Nothing is sent until you act: clicking <strong>Explain</strong>, <strong>Example</strong> or
+        <strong>Ask</strong>, pressing one of Sidenote's shortcuts, sending a follow-up question, or clicking "Test
+        connection" in Settings. Then Sidenote sends:
+      </p>
+      <ul>
+        <li>the text you selected;</li>
+        <li>the passage around it (up to about 1,500 characters) and the section headings above it;</li>
+        <li>the page title, and on chat sites (claude.ai, ChatGPT) the question you asked there;</li>
+        <li>for follow-ups, your question and the earlier answers in that note;</li>
+        <li>for a note opened inside another note, the original passage and the chain of terms you selected.</li>
+      </ul>
+      <p>
+        It is sent over HTTPS to the service selected in Settings (Google Gemini, OpenAI, Anthropic, DeepSeek, Zhipu,
+        SiliconFlow, Alibaba Cloud, a local Ollama, or an endpoint you entered). If automatic fallback is on and that
+        service fails, the same request goes to the next service you have set up with a key. What each service does
+        with the data is governed by its own terms and privacy policy. Some free tiers (for example Google AI Studio's)
+        may use requests to improve their models; check the provider's terms if that matters to you.
+      </p>
+      <p>
+        Sidenote does not read or send anything from pages where you have not enabled it, and does not send your
+        browsing history.
+      </p>
+
+      <h2>What is stored on your device</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Where</th>
+        </tr>
+        <tr>
+          <td>Settings and API keys</td>
+          <td>
+            <code>chrome.storage.local</code>: this browser profile only, not synced, never given to web pages.
+          </td>
+        </tr>
+        <tr>
+          <td>Notes: the page address and title, the selected text, the surrounding passage, and the answers</td>
+          <td>The extension's own IndexedDB database, so notes and highlights are there when you come back.</td>
+        </tr>
+      </table>
+      <p>
+        You can delete notes one by one in the in-page notes list or the Notebook. Removing the extension deletes all
+        of it. An Anki export is a file you download; Sidenote does not keep a copy elsewhere.
+      </p>
+
+      <h2>Permissions</h2>
+      <table>
+        <tr>
+          <th>Permission</th>
+          <th>Why</th>
+        </tr>
+        <tr>
+          <td>Access to websites you enable (optional)</td>
+          <td>
+            To show the Explain button on selected text and highlight explained words. Off everywhere until you enable
+            a site or all sites. You can remove access in Settings or from Chrome's extension menu.
+          </td>
+        </tr>
+        <tr>
+          <td>Access to the AI services' API addresses</td>
+          <td>To send your requests to the service you chose.</td>
+        </tr>
+        <tr>
+          <td><code>storage</code></td>
+          <td>To keep your settings and API keys.</td>
+        </tr>
+        <tr>
+          <td><code>scripting</code></td>
+          <td>To start Sidenote on exactly the sites you enabled.</td>
+        </tr>
+        <tr>
+          <td><code>activeTab</code></td>
+          <td>So the toolbar button can show whether Sidenote is on for the site you are viewing.</td>
+        </tr>
+      </table>
+      <p>
+        Sidenote uses Chrome's built-in, on-device language detection to tell the model which language to answer in.
+        It does not load or run code from the internet.
+      </p>
+
+      <h2>Children</h2>
+      <p>Sidenote is not directed at children under 13 and does not knowingly collect their data.</p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes, the new version will be published at this address with a new effective date. Changes
+        that affect what data is sent will also be noted in the release notes.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy: use the support link on Sidenote's Chrome Web Store listing.</p>
+    </main>
+  </body>
+</html>
